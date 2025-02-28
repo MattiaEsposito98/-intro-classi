@@ -67,10 +67,29 @@
   if ($mattia->auto == null) {
     echo '<br> mattia non ha l auto <br>';
   }
+
+  function moltiplica($int)
+  {
+    try {
+      if (!is_int($int)) {
+        throw new Exception("Non è un numero!");
+      }
+    } catch (Exception $e) {
+      echo "Errore: " . $e->getMessage();
+      return null; // non esce il fatal error
+    }
+    return $int * 3;
+  }
+
+  // Esempi di test
+  echo moltiplica(5);  // Output: 15
+  echo moltiplica("ciao"); // Output: Errore: Non è un numero!
+
+
+
+
+
   ?>
-
-
-
 </body>
 
 </html>
